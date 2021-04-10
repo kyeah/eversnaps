@@ -1,3 +1,6 @@
+# keepalive for heroku dyno.
+# note that this keeps the site up for ~558 free dyno hours a month.
+#
 name: ksnaps
 
 on:
