@@ -1,0 +1,17 @@
+name: ksnaps
+
+on:
+  workflow_dispatch:
+  # scheduled to run every 30 minutes, daily
+  # Start: 6AM EST (7AM EDT) (11 UTC)
+  # End: 12AM EST (1AM EDT Saturday) (5 UTC Saturday)
+  schedule:
+    - cron: '0,30 11-23 * * *'
+    - cron: '0,30 0-5 * * *'
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ping
+        run: curl http://ksnaps.com/
